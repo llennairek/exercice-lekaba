@@ -1,10 +1,11 @@
 import "./App.css";
+import Home from "./containers/Home";
 
 function App() {
   return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
-    </div>
+    <>
+      <Home />
+    </>
   );
 }
 
