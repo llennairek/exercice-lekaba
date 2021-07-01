@@ -5,10 +5,16 @@ import "./Map.css";
 
 function Map() {
   const GoogleMapExample = withGoogleMap((props) => (
-    <GoogleMap
-      defaultCenter={{ lat: 46.124476666666666, lng: 3.41733 }}
-      defaultZoom={13}
-    ></GoogleMap>
+    <GoogleMap defaultCenter={{ lat: 46.12966, lng: 3.42564 }} defaultZoom={14}>
+      {data.map((item) => (
+        <Marker
+          position={{
+            lat: item.latitude,
+            lng: item.longitude,
+          }}
+        />
+      ))}
+    </GoogleMap>
   ));
   return (
     <div className="map">
@@ -20,11 +26,7 @@ function Map() {
             />
           }
           mapElement={<div style={{ height: `100%` }} />}
-        >
-          {data.map((item) => (
-            <Marker position={{ lat: item.latitude, lng: item.longitude }} />
-          ))}
-        </GoogleMapExample>
+        ></GoogleMapExample>
       </div>
     </div>
   );
